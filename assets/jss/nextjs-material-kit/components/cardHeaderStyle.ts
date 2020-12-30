@@ -4,7 +4,7 @@ import {
   dangerCardHeader,
   infoCardHeader,
   primaryCardHeader
-} from "assets/jss/nextjs-material-kit.ts";
+} from "../../nextjs-material-kit";
 
 const cardHeaderStyle = {
   cardHeader: {

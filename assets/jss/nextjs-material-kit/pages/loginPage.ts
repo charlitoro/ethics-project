@@ -1,4 +1,4 @@
-import { container } from "assets/jss/nextjs-material-kit.ts";
+import { container } from "../../nextjs-material-kit";
 
 const signupPageStyle = {
   container: {

@@ -19,9 +19,9 @@ import styles from "../../assets/jss/nextjs-material-kit/pages/landingPageSectio
 // @ts-ignore
 import team1 from "../../assets/img/faces/avatar.jpg";
 // @ts-ignore
-import team2 from "../../assets/img/faces/christian.jpg";
+import team3 from "../../assets/img/faces/christian.jpg";
 // @ts-ignore
-import team3 from "../../assets/img/faces/kendall.jpg";
+import team2 from "../../assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles as any);
 
@@ -43,16 +43,14 @@ export default function TeamSection() {
                 <img src={team1} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Gigi Hadid
+                Erika Orbes
                 <br />
-                <small className={classes.smallTitle}>Model</small>
+                <small className={classes.smallTitle}>Analisis</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
+                  analista en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -86,16 +84,14 @@ export default function TeamSection() {
                 <img src={team2} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Christian Louboutin
+                Kandel Yandar
                 <br />
-                <small className={classes.smallTitle}>Designer</small>
+                <small className={classes.smallTitle}>Arquitectura</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
+                  arquitecta en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -122,16 +118,14 @@ export default function TeamSection() {
                 <img src={team3} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Kendall Jenner
+                Carlos Toro
                 <br />
-                <small className={classes.smallTitle}>Model</small>
+                <small className={classes.smallTitle}>Desarrollo</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
+                  desarrolador full stack en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>

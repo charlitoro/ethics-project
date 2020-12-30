@@ -19,6 +19,7 @@ import styles from "../assets/jss/nextjs-material-kit/pages/landingPage";
 
 // Sections for this page
 import ProductSection from "../pages-sections/LandingPage-Sections/ProductSection";
+import TeamSection from "../pages-sections/LandingPage-Sections/TeamSection";
 import WorkSection from "../pages-sections/LandingPage-Sections/WorkSection";
 
 const dashboardRoutes: Array<any> = [];
@@ -71,6 +72,7 @@ export default ( props: any ) =>  {
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
                     <ProductSection />
+                    <TeamSection />
                     <WorkSection />
                 </div>
             </div>
