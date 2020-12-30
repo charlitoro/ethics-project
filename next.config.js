@@ -1,13 +1,12 @@
-const withCSS = require('@zeit/next-css');
+const withPlugins = require("next-compose-plugins");
+const withImages = require("next-images");
+const withSass = require("@zeit/next-sass");
+const webpack = require("webpack");
+const path = require("path");
 
-module.exports = withCSS({
-    exportTrailingSlash: true,
-    cssLoaderOptions: {
-        url: false
-    },
-    env:{
-        API_URL: "https://rybk37gvz3.execute-api.us-east-1.amazonaws.com/prod/api",
-        CLIENT_ID: "8c736a60-7cf4-11ea-8bbc-adcb39da8f47",
-        AUTH_SERVER: "https//api.charlitoro.com"
+module.exports = withPlugins([[withSass], [withImages]], {
+    webpack(config, options) {
+        config.resolve.modules.push(path.resolve("./"));
+        return config;
     }
 });
