@@ -13,7 +13,20 @@ import styles from "../assets/jss/nextjs-material-kit/components/customInputStyl
 
 const useStyles = makeStyles(styles as any);
 
-export default function CustomInput(props: any) {
+interface Props {
+    formControlProps?: any;
+    labelText?: string;
+    id: any;
+    labelProps?: any;
+    inputProps?: any;
+    error?: any;
+    white?: any;
+    inputRootCustomClasses?: any;
+    success?: any;
+    onChange?: any;
+}
+
+export default function CustomInput( props: Props ) {
     const classes = useStyles();
     const {
         formControlProps,
@@ -24,7 +37,8 @@ export default function CustomInput(props: any) {
         error,
         white,
         inputRootCustomClasses,
-        success
+        success,
+        onChange
     } = props;
 
     const labelClasses = classNames({
@@ -44,7 +58,7 @@ export default function CustomInput(props: any) {
         [classes.input]: true,
         [classes.whiteInput]: white
     });
-    var formControlClasses;
+    let formControlClasses;
     if (formControlProps !== undefined) {
         formControlClasses = classNames(
             formControlProps.className,
@@ -72,6 +86,7 @@ export default function CustomInput(props: any) {
                     underline: underlineClasses
                 }}
                 id={id}
+                onChange={onChange}
                 {...inputProps}
             />
         </FormControl>
