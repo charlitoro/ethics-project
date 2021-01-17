@@ -18,7 +18,7 @@ import styles from "../../assets/jss/nextjs-material-kit/pages/landingPage";
 
 const dashboardRoutes: Array<any> = [];
 const useStyles = makeStyles(styles as any);
-const image = 'https://pixabay.com/get/52e9d74a4d53ad14f6d1867dda3536781536dde35b55764f_1920.jpg'
+const image = 'https://pixabay.com/get/57e4d041435aab14f6d1867dda3536781536dde35457704d_1920.jpg'
 
 export default ( props: any ) =>  {
     const classes = useStyles();
@@ -41,12 +41,11 @@ export default ( props: any ) =>  {
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={6}>
-                            <h1 className={classes.title}>Administración de la Ley 842</h1>
-                            <h3>
-                                En esta sección se administra todos los titulos, capitlos y articulos de
-                                la ley 842 del 2003. Entre las opciones permitidas estan la creacion,
-                                edicion y eliminacion de titulos, capilutos y articulos.
-                            </h3>
+                            <h1 className={classes.title}>Vista Previa de la Ley 842</h1>
+                            <h4>
+                                En esta sección se presenta una vista previa de toda la ley administrada hasta el
+                                momento. Adicional permite editar directamente una titulo, capitulo o articulo.
+                            </h4>
                             <br />
                         </GridItem>
                     </GridContainer>
