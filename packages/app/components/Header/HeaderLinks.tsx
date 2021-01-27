@@ -24,19 +24,25 @@ export default function HeaderLinks() {
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
-                <Button href="/" color="transparent" className={classes.navLink}>
-                    <Star className={classes.icons}/> Inicio
-                </Button>
+                <Link href="/">
+                    <Button color="transparent" className={classes.navLink}>
+                        <Star className={classes.icons}/> Inicio
+                    </Button>
+                </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Button href="/ley" color="transparent" className={classes.navLink}>
-                    <Gavel className={classes.icons}/> Ley 842
-                </Button>
+                <Link href="/ley">
+                    <Button color="transparent" className={classes.navLink}>
+                        <Gavel className={classes.icons}/> Ley 842
+                    </Button>
+                </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Button href="/nosotros" color="transparent" className={classes.navLink}>
-                    <Group className={classes.icons} /> Nosotros
-                </Button>
+                <Link href="/nosotros">
+                    <Button color="transparent" className={classes.navLink}>
+                        <Group className={classes.icons} /> Nosotros
+                    </Button>
+                </Link>
             </ListItem>
         </List>
     );
