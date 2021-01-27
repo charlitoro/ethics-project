@@ -72,8 +72,6 @@ export default ( props: any ) =>  {
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
                     <ProductSection />
-                    <TeamSection />
-                    <WorkSection />
                 </div>
             </div>
             <Footer />
