@@ -1,5 +1,5 @@
 {
-  "name": "Etica",
+  "name": "web",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -42,6 +42,7 @@
     "react": "16.13.1",
     "react-datetime": "^3.0.4",
     "react-dom": "16.13.1",
+    "react-player": "^2.8.2",
     "react-slick": "^0.27.13",
     "react-swipeable-views": "^0.13.9",
     "sass-loader": "^8.0.2",

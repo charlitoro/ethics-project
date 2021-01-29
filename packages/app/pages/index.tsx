@@ -20,6 +20,8 @@ import styles from "../assets/jss/nextjs-material-kit/pages/landingPage";
 // Sections for this page
 import ProductSection from "../pages-sections/LandingPage-Sections/ProductSection";
 import WorkSection from "../pages-sections/LandingPage-Sections/WorkSection";
+import Link from "next/link";
+import LandingPage from "../pages-sections/LandingPage-Sections/user/LandingPage";
 
 const dashboardRoutes: Array<any> = [];
 
@@ -42,36 +44,24 @@ export default ( props: any ) =>  {
                 }}
                 {...rest}
             />
-            <Parallax filter responsive image={require("assets/img/landing-bg.jpg")}>
+            <Parallax filter responsive image={require("assets/img/index-landing-bg.jpg")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={6}>
-                            <h1 className={classes.title}>Your Story Starts With Us.</h1>
-                            <h4>
-                                Every landing page needs a small description after the big bold
-                                title, that{"'"}s why we added this text here. Add here all the
-                                information that can make you or your product create the first
-                                impression.
-                            </h4>
+                            <h1 className={classes.title}>Etica Profecional de Ingeniería y Sus Profecines Afines</h1>
                             <br />
-                            <Button
-                                color="danger"
-                                size="lg"
-                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <i className="fas fa-play" />
-                                Watch video
-                            </Button>
+                            <Link href="/ley">
+                                <Button color="danger" size="lg" target="_blank" rel="noopener noreferrer" >
+                                    <i className="fas fa-play" /> Ver Más
+                                </Button>
+                            </Link>
                         </GridItem>
                     </GridContainer>
                 </div>
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <ProductSection />
-                    <WorkSection />
+                    <LandingPage/>
                 </div>
             </div>
             <Footer />

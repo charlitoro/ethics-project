@@ -1,7 +1,7 @@
 {
-  "name": "auth-planner",
+  "name": "auth",
   "version": "1.0.0",
-  "description": "Authentication Api to Planner project",
+  "description": "Authentication Api to Law project",
   "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
