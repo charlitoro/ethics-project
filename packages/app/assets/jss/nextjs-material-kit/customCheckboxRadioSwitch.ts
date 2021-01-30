@@ -4,7 +4,7 @@ import {
   roseColor,
   grayColor,
   hexToRGBAlpha
-} from "assets/jss/nextjs-material-kit.ts";
+} from "../nextjs-material-kit";
 
 const customCheckboxRadioSwitch = {
   checkRoot: {
@@ -20,7 +20,7 @@ const customCheckboxRadioSwitch = {
     }
   },
   labelRoot: {
-    marginLeft: "-14px"
+    marginLeft: "-3px"
   },
   checkboxAndRadio: {
     position: "relative",
@@ -62,8 +62,8 @@ const customCheckboxRadioSwitch = {
   label: {
     cursor: "pointer",
     paddingLeft: "0",
-    color: "rgba(0, 0, 0, 0.26)",
-    fontSize: "14px",
+    color: "rgba(0, 0, 0, 0.8)",
+    fontSize: "15px",
     lineHeight: "1.428571429",
     fontWeight: "400",
     display: "inline-flex",

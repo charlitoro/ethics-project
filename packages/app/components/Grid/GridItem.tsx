@@ -21,7 +21,7 @@ const useStyles = makeStyles(styles as any);
 interface Props {
     children?: any;
     className?: string;
-    cs?: any; xs?: any; sm?: any; md?: any;
+    cs?: any; xs?: any; sm?: any; md?: any; lg?: any;
 }
 
 const GridItem = ( { children, className, ...rest }: Props ) => {
