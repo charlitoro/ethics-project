@@ -1,2 +1,13 @@
 import { gql } from "apollo-boost";
 
+export const searchQuery = gql`
+    query search{
+        titles{
+            id name number
+            chapters{
+                id number name img
+                articles{id number name content}
+            }
+        }
+    }
+`

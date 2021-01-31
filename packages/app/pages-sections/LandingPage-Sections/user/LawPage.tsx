@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -23,12 +23,25 @@ import {
 } from "@material-ui/core";
 import CustomInput from "../../../components/CustomInput";
 import { Search } from "@material-ui/icons";
+import Title, { ITitle } from "../../../components/etihcs/Title";
+import {executeQuery} from "../../../plugins/graphqlQueryRequest";
+import { searchQuery } from "../../../utils/queries";
+import { map } from "lodash";
 
 const useStyles = makeStyles(styles as any);
 
-export default function Law() {
+const searchLawContent = (): Array<ITitle> | undefined => {
+    const { data } = executeQuery( searchQuery )
+    if( data && data.titles ) {
+        console.log('====>', data.titles)
+        return data.titles
+    }
+}
+
+export default function LawPage() {
     const classes = useStyles();
-    const [value, setValue] = React.useState('');
+    const [value, setValue] = useState('');
+    const [search, setSearch] = useState<Array<ITitle> | undefined> ( searchLawContent() )
 
     const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue((event.target as HTMLInputElement).value);
@@ -93,9 +106,15 @@ export default function Law() {
                     />
                 </GridItem>
             </GridContainer>
-            <div>
-            {/*  TODO: consumir api para listar lo buscado */}
-            </div>
+            <GridContainer justify="center">
+                { map( search, ( { id, number, name, chapters }: ITitle ) => {
+                    return(
+                        <GridItem key={id} xs={12} sm={12} md={12} lg={8}>
+                            <Title id={id} number={number} name={name} chapters={chapters} />
+                        </GridItem>
+                    )
+                } ) }
+            </GridContainer>
         </div>
     );
 }

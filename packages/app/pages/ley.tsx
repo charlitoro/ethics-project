@@ -11,23 +11,22 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer";
 import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
-import Button from "../components/Button";
 import HeaderLinks from "../components/Header/HeaderLinks";
 import Parallax from "../components/Parallax";
 
 import styles from "../assets/jss/nextjs-material-kit/pages/landingPage";
 
 // Sections for this page
-import ProductSection from "../pages-sections/LandingPage-Sections/ProductSection";
-import TeamSection from "../pages-sections/LandingPage-Sections/TeamSection";
-import WorkSection from "../pages-sections/LandingPage-Sections/WorkSection";
-import Law from "../pages-sections/LandingPage-Sections/user/Law";
+import LawPage from "../pages-sections/LandingPage-Sections/user/LawPage";
+//
+import withData from '../plugins/apollo'
+
 
 const dashboardRoutes: Array<any> = [];
 
 const useStyles = makeStyles(styles as any);
 
-export default ( props: any ) =>  {
+const Ley = ( props: any ) =>  {
     const classes = useStyles();
     const { ...rest } = props;
     return (
@@ -61,10 +60,12 @@ export default ( props: any ) =>  {
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <Law />
+                    <LawPage />
                 </div>
             </div>
             <Footer />
         </div>
     );
 }
+
+export default withData( Ley )
