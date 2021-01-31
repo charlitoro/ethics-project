@@ -20,6 +20,10 @@ const lawStyles = {
         maxWidth: 345,
         flexGrow: 1
     },
+    gridScroll: {
+        overflowY: "scroll",
+        height: 600,
+    },
     ...customCheckboxRadioSwitch
 };
 

@@ -19,7 +19,8 @@ import {
     RadioGroup,
     FormHelperText,
     Radio,
-    InputAdornment
+    InputAdornment,
+    GridList
 } from "@material-ui/core";
 import CustomInput from "../../../components/CustomInput";
 import { Search } from "@material-ui/icons";
@@ -106,7 +107,7 @@ export default function LawPage() {
                     />
                 </GridItem>
             </GridContainer>
-            <GridContainer justify="center">
+            <GridContainer className={classes.gridScroll} justify="center">
                 { map( search, ( { id, number, name, chapters }: ITitle ) => {
                     return(
                         <GridItem key={id} xs={12} sm={12} md={12} lg={8}>
