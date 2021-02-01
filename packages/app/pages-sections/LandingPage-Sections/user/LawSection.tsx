@@ -34,12 +34,11 @@ const useStyles = makeStyles(styles as any);
 const searchLawContent = (): Array<ITitle> | undefined => {
     const { data } = executeQuery( searchQuery )
     if( data && data.titles ) {
-        console.log('====>', data.titles)
         return data.titles
     }
 }
 
-export default function LawPage() {
+export default function LawSection() {
     const classes = useStyles();
     const [value, setValue] = useState('');
     const [search, setSearch] = useState<Array<ITitle> | undefined> ( searchLawContent() )

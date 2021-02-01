@@ -17,9 +17,10 @@ import Parallax from "../components/Parallax";
 import styles from "../assets/jss/nextjs-material-kit/pages/landingPage";
 
 // Sections for this page
-import LawPage from "../pages-sections/LandingPage-Sections/user/LawPage";
+import LawSection from "../pages-sections/LandingPage-Sections/user/LawSection";
 //
 import withData from '../plugins/apollo'
+import CommentsSection from "../pages-sections/LandingPage-Sections/user/CommentsSection";
 
 
 const dashboardRoutes: Array<any> = [];
@@ -60,7 +61,8 @@ const Ley = ( props: any ) =>  {
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <LawPage />
+                    <LawSection />
+                    <CommentsSection />
                 </div>
             </div>
             <Footer />

@@ -11,3 +11,11 @@ export const searchQuery = gql`
         }
     }
 `
+
+export const commentsQuery = gql`
+    query commects{
+        comments{
+            id content createdAt
+        }
+    }
+`
