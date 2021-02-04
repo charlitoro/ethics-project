@@ -24,6 +24,11 @@ const lawStyles = {
         overflowY: "scroll",
         height: 600,
     },
+    searchIcon: {
+        width: "20px",
+        height: "20px",
+        color: "inherit"
+    },
     ...customCheckboxRadioSwitch
 };
 

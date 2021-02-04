@@ -23,11 +23,9 @@ interface IComment{
 const findComments = (): Array<IComment> | undefined => {
     const { data } = executeQuery( commentsQuery )
     if( data && data.comments ) {
-        const comments = orderBy( data.comments, ( { createdAt }: IComment ) => {
+        return  orderBy( data.comments, ( { createdAt }: IComment ) => {
             return moment(createdAt); }, ['desc']
         );
-        console.log( comments )
-        return comments
     }
 }
 
