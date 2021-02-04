@@ -78,36 +78,39 @@ export default function LawSection() {
                 else if( searchValue === SearchValue.CHAPTER ) {
                     let setData: Array<any> = []
                     forEach(data.chapters, (chapter) => {
-                        const index = findIndex(setData, {id: get(chapter, `title.id`)})
-                        if (index !== -1)
-                            setData[index].chapters = unionBy(setData[index].chapters, [{...chapter }], 'id')
-                        else
-                            setData = unionBy(setData, [{...chapter.title, chapters: [{...chapter}]}], 'id')
+                        if ( get(chapter, `title.id`) ) {
+                            const index = findIndex(setData, {id: get(chapter, `title.id`)})
+                            if (index !== -1)
+                                setData[index].chapters = unionBy(setData[index].chapters, [{...chapter}], 'id')
+                            else
+                                setData = unionBy(setData, [{...chapter.title, chapters: [{...chapter}]}], 'id')
+                        }
                     })
-                    console.log( setData )
                     setSearched(setData)
                 } else if( searchValue === SearchValue.ARTICLE ) {
 
                     const setChapterData = (chapters: Array<any>, article: any) => {
                         const index = findIndex(chapters, {id: get(article, `chapter.id`)})
-                        if (index !== -1)
-                            return chapters[index].articles = unionBy(chapters[index].articles, [{...article}], 'id')
-                        else
+                        if (index !== -1) {
+                            chapters[index].articles = unionBy(chapters[index].articles, [{...article}], 'id')
+                            return chapters
+                        } else
                             return unionBy(chapters, [{...article.chapter, articles: [{...article}]}], 'id')
                     }
 
                     let setData: Array<any> = []
                     forEach(data.articles, (article) => {
-                        const indexTitle = findIndex(setData, {id: get(article, `chapter.title.id`)})
-                        if (indexTitle !== -1)
-                            setData[indexTitle].chapters = setChapterData(setData[indexTitle].chapters, article)
-                        else
-                            setData = unionBy(setData, [{
-                                ...get(article, `chapter.title`),
-                                chapters: setChapterData([], article)
-                            }])
+                        if( get(article, `chapter.title.id`) ) {
+                            const indexTitle = findIndex(setData, {id: get(article, `chapter.title.id`)})
+                            if (indexTitle !== -1)
+                                setData[indexTitle].chapters = setChapterData(setData[indexTitle].chapters, article)
+                            else
+                                setData = unionBy(setData, [{
+                                    ...article.chapter.title,
+                                    chapters: setChapterData([], article)
+                                }], 'id')
+                        }
                     })
-                    console.log( setData )
                     setSearched(setData)
                 }
             }
