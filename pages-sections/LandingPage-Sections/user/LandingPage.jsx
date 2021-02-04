@@ -1,39 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "../../../assets/jss/nextjs-material-kit/pages/landingPageSections/user/landingPageStyles";
 import GridItem from "../../../components/Grid/GridItem";
 import GridContainer from "../../../components/Grid/GridContainer";
 import ReactPlayer from 'react-player'
 import {Card, CardActionArea, CardMedia, CardContent, CardActions, Button, Typography} from "@material-ui/core";
+import {newsQuery, searchQuery} from "../../../utils/queries";
+import {executeQuery} from "../../../plugins/graphqlQueryRequest";
+import {map} from "lodash";
 
 const useStyles = makeStyles(styles);
 
-const copniaNews = [
-    {
-        key: 1,
-        url: "https://www.copnia.gov.co/noticias/certificado-de-vigencia-y-antecedentes-disciplinarios",
-        image: "https://www.copnia.gov.co/sites/default/files/styles/slider_home_lg/public/node/article/field_image/Banner%20certificados-01_0.jpg?itok=VEksXYFv",
-        title: "CERTIFICADO DE VIGENCIA Y ANTECEDENTES",
-        content: "El Consejo Profesional Nacional de Ingeniería - COPNIA, es la entidad pública del orden nacional, encargada de la función administrativa de control y vigilancia del ejercicio de la ingeniería, de sus profesiones afines..."
-    },
-    {
-        key: 2,
-        url: "https://www.copnia.gov.co/noticias/resultado-pruebas-convocatoria-interna-planta-temporal",
-        image: "https://www.copnia.gov.co/sites/default/files/styles/slider_home_lg/public/node/article/field_image/Banner%20resultado-01.jpg?itok=IhPhZU-C",
-        title: "Resultado pruebas, convocatoria interna planta temporal",
-        content: "El Consejo Profesional Nacional de Ingeniería -COPNIA, se permite publicar los resultados de las pruebas de los aspirantes a la convocatoria interna, planta temporal 2021..."
-    },
-    {
-        key: 2,
-        url: "https://www.copnia.gov.co/noticias/participe-en-la-construccion-del-plan-anticorrupcion-2021",
-        image: "https://www.copnia.gov.co/sites/default/files/styles/slider_home_lg/public/node/article/field_image/Banner%20PAAC-01.jpg?itok=QSoR2Y5a",
-        title: "Participe en la construcción del Plan Anticorrupción 2021",
-        content: "La Subdirección de Planeación, Control y Seguimiento del Consejo Profesional Nacional de Ingeniería, pone a consideración de la ciudadanía el proyecto del “Plan Anticorrupción y de Atención al Ciudadano 2021” así..."
-    },
-]
+const getNews = () => {
+    const { data, loading } = executeQuery( newsQuery )
+    if( !loading && data.posts ) {
+        return data.posts
+    }
+}
 
 export default function LandingPage() {
     const classes = useStyles()
+
+    const [news, setNews] = useState( getNews() )
+
     return (
         <div className={classes.section}>
             <div>
@@ -62,11 +51,11 @@ export default function LandingPage() {
                 </GridContainer>
             </div>
             <div className={classes.section}>
-                <h1 className={classes.title}>Noticias de COPNIA</h1>
+                <h1 className={classes.title}>Noticias</h1>
                 <GridContainer justify="center">
                     {
-                        copniaNews.map( ({ key, url, image, title, content } ) => {
-                            return <GridItem key={key} xs={4}>
+                        map( news, ({ id, url, image, title, content } ) => {
+                            return <GridItem key={id} xs={4}>
                                 <Card className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia

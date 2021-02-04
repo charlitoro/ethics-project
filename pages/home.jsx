@@ -22,12 +22,13 @@ import ProductSection from "../pages-sections/LandingPage-Sections/ProductSectio
 import WorkSection from "../pages-sections/LandingPage-Sections/WorkSection";
 import Link from "next/link";
 import LandingPage from "../pages-sections/LandingPage-Sections/user/LandingPage";
+import withData from "../plugins/apollo";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles );
 
-export default ( props ) =>  {
+const Home = ( props ) =>  {
     const classes = useStyles();
     const { ...rest } = props;
     return (
@@ -68,3 +69,5 @@ export default ( props ) =>  {
         </div>
     );
 }
+
+export default withData( Home )

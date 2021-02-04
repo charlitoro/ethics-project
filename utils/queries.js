@@ -41,3 +41,6 @@ export const createCommentMutation = `
         createComment(data:{content:$comment}){id}
     }
 `
+export const newsQuery = gql`
+    query news{ posts{id url image title content} }
+`
