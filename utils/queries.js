@@ -13,7 +13,7 @@ export const searchQuery = gql`
     }
 `
 
-export const commentsQuery = gql`
+export const commentsQuery = `
     query commects{
         comments{
             id content createdAt
@@ -35,3 +35,9 @@ export const searchArticleQuery = `query articleSearch($text: String){
         id name number content chapter{id name number title{id name number}}
     }
 }`
+
+export const createCommentMutation = `
+    mutation createComment($comment: String){
+        createComment(data:{content:$comment}){id}
+    }
+`

@@ -173,7 +173,7 @@ export default function LawSection() {
                                 fullWidth: true
                             }}
                         />
-                        <Button justIcon round color="white" onClick={handlerSearch}>
+                        <Button justIcon round color="rose" onClick={handlerSearch}>
                             <Search className={classes.searchIcon}/>
                         </Button>
                     </GridItem>

@@ -4,19 +4,20 @@ import styles from "../../../assets/jss/nextjs-material-kit/pages/landingPageSec
 import {TextField, List, ListItem, ListItemAvatar, Avatar, ListItemText, Typography} from '@material-ui/core';
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
-import parse from 'html-react-parser'
 import {executeQuery} from "../../../plugins/graphqlQueryRequest";
-import {commentsQuery} from "../../../utils/queries";
-import { AccountCircle } from '@material-ui/icons';
-import { map, orderBy } from 'lodash';
+import {commentsQuery, createCommentMutation} from "../../../utils/queries";
+import {AccountCircle, AddComment} from '@material-ui/icons';
+import { map, orderBy, isEmpty } from 'lodash';
 import moment from 'moment';
-
+import Button from "../../../components/Button";
+import {API_URL, CLIENT_ID} from "../../../utils/constants";
+import {gql} from "apollo-boost";
+import fetch from 'node-fetch';
 
 const useStyles = makeStyles(styles);
 
-
 const findComments = () => {
-    const { data } = executeQuery( commentsQuery )
+    const { data } = executeQuery( gql(commentsQuery) )
     if( data && data.comments ) {
         return  orderBy( data.comments, ( { createdAt } ) => {
             return moment(createdAt); }, ['desc']
@@ -27,6 +28,46 @@ const findComments = () => {
 export default function CommentsSection (){
     const classes = useStyles();
     const [comments, setComments] = useState( findComments() )
+    const [commentText, setCommentText] = useState( '' )
+
+    const handlerCommentText = ( event ) => {
+        setCommentText( event.target.value )
+    }
+
+    const handlerPostComment = async () => {
+        if( !isEmpty(commentText) ){
+            try {
+                const response = await fetch( `${API_URL}`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        query: createCommentMutation,
+                        variables:{ comment: commentText }
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `client_id ${CLIENT_ID}`
+                    }
+                } ).then( (res) => res.json() )
+                console.log(response)
+                const { data } = await fetch( `${API_URL}`, {
+                    method: 'POST',
+                    body: JSON.stringify({ query: commentsQuery }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `client_id ${CLIENT_ID}`
+                    }
+                } ).then( (res) => res.json() )
+                setCommentText( '' )
+                setComments(  orderBy( data.comments, ( { createdAt } ) => {
+                    return moment(createdAt); }, ['desc']
+                ) )
+            } catch (error){
+                console.error( 'Error: ', error.message )
+            }
+        }
+    }
 
     return(
         <div className={classes.section}>
@@ -37,9 +78,13 @@ export default function CommentsSection (){
                         label="Deja tu comentario"
                         fullWidth
                         multiline
+                        onChange={handlerCommentText}
                         rows={4}
                         variant="outlined"
                     />
+                    <Button color="rose" size="sm" onClick={handlerPostComment} >
+                        <AddComment className="fas fa-play" /> Comentar
+                    </Button>
                 </GridItem>
             </GridContainer>
             <div>
@@ -62,7 +107,7 @@ export default function CommentsSection (){
                                         secondary={
                                             <React.Fragment>
                                                 <Typography component="span" variant="body1" className={classes.inline} color="textPrimary">
-                                                    { parse(content) }
+                                                    { content }
                                                 </Typography>
                                             </React.Fragment>
                                         }
