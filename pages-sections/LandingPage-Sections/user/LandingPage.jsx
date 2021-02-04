@@ -7,14 +7,17 @@ import ReactPlayer from 'react-player'
 import {Card, CardActionArea, CardMedia, CardContent, CardActions, Button, Typography} from "@material-ui/core";
 import {newsQuery, searchQuery} from "../../../utils/queries";
 import {executeQuery} from "../../../plugins/graphqlQueryRequest";
-import {map} from "lodash";
+import {map, orderBy} from "lodash";
+import moment from "moment";
 
 const useStyles = makeStyles(styles);
 
 const getNews = () => {
     const { data, loading } = executeQuery( newsQuery )
-    if( !loading && data.posts ) {
-        return data.posts
+    if( !loading && data && data.posts ) {
+        return orderBy( data.posts, ( { createdAt } ) => {
+            return moment(createdAt); }, ['desc']
+        );
     }
 }
 
@@ -51,7 +54,7 @@ export default function LandingPage() {
                 </GridContainer>
             </div>
             <div className={classes.section}>
-                <h1 className={classes.title}>Noticias</h1>
+                <h2 className={classes.title}>Noticias</h2>
                 <GridContainer justify="center">
                     {
                         map( news, ({ id, url, image, title, content } ) => {

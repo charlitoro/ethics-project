@@ -17,6 +17,7 @@ const landingPageStyles = {
     },
     card: {
         maxWidth: 345,
+        marginBottom: "20px",
         flexGrow: 1
     }
 };

@@ -42,5 +42,5 @@ export const createCommentMutation = `
     }
 `
 export const newsQuery = gql`
-    query news{ posts{id url image title content} }
+    query news{ posts{id url image title content createdAt} }
 `
