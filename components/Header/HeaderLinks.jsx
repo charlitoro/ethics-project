@@ -31,18 +31,14 @@ export default function HeaderLinks() {
                 </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link href="/ley">
-                    <Button color="transparent" className={classes.navLink}>
-                        <Gavel className={classes.icons}/> Ley 842
-                    </Button>
-                </Link>
+                <Button href="/ley" color="transparent" className={classes.navLink}>
+                    <Gavel className={classes.icons}/> Ley 842
+                </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link href="/nosotros">
-                    <Button color="transparent" className={classes.navLink}>
-                        <Group className={classes.icons} /> Nosotros
-                    </Button>
-                </Link>
+                <Button href="/nosotros" color="transparent" className={classes.navLink}>
+                    <Group className={classes.icons} /> Nosotros
+                </Button>
             </ListItem>
         </List>
     );
