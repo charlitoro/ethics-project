@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o dist/",
-    "start": "yarn install && next build && next start"
+    "start": "next build && next start",
+    "prod": "yarn install && next start"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",
