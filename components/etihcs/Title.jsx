@@ -23,7 +23,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Title( { number, name, id, chapters } ){
+export default function Title( { number, name, chapters } ){
     const classes = useStyles();
 
     return (

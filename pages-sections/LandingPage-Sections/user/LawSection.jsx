@@ -20,7 +20,7 @@ import Title from "../../../components/etihcs/Title";
 import {executeQuery} from "../../../plugins/graphqlQueryRequest";
 import { searchQuery } from "../../../utils/queries";
 import { searchTitleQuery, searchChapterQuery, searchArticleQuery } from '../../../utils/queries'
-import { map, forEach, get, findIndex, unionBy } from "lodash";
+import {map, forEach, get, findIndex, unionBy, isEmpty} from "lodash";
 import fetch from 'node-fetch';
 import { API_URL, CLIENT_ID } from "../../../utils/constants";
 
@@ -126,7 +126,7 @@ export default function LawSection() {
     if( searched ) {
         return (
             <div className={classes.section}>
-                <h1 className={classes.title}>Búsqueda</h1>
+                <h2 className={classes.title}>Búsqueda</h2>
                 <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={8}>
                         <FormControl component="fieldset">
@@ -185,13 +185,23 @@ export default function LawSection() {
                     </GridItem>
                 </GridContainer>
                 <GridContainer className={classes.gridScroll} justify="center">
-                    {map(searched, ({id, number, name, chapters}) => {
-                        return (
-                            <GridItem key={id} xs={12} sm={12} md={12} lg={8}>
-                                <Title id={id} number={number} name={name} chapters={chapters}/>
-                            </GridItem>
-                        )
-                    })}
+                    {(() => {
+                        if( isEmpty(searched) )
+                            return (
+                                <GridItem xs={12} sm={12} md={12} lg={8}>
+                                    <h3 className={classes.title}>"No se encontraron concidencias"</h3>
+                                </GridItem>
+                            )
+                        else
+                            return map(searched, ({id, number, name, chapters}) => {
+                                return (
+                                    <GridItem key={id} xs={12} sm={12} md={12} lg={8}>
+                                        <Title id={id} number={number} name={name} chapters={chapters}/>
+                                    </GridItem>
+                                )
+                            })
+                    })()}
+
                 </GridContainer>
             </div>
         );

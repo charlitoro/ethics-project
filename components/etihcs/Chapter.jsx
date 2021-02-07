@@ -24,16 +24,16 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Chapter ( { id, number, image, name, articles } ) {
+export default function Chapter ( { number, name, articles } ) {
     const classes = useStyles();
     return (
         <div className={classes.section}>
-            <h2 className={classes.title}>Capitulo {number}: {name}</h2>
+            <h3 className={classes.title}>Capitulo {number}: {name}</h3>
             {
                 map( articles, ( { id, name, number, content } ) => {
                     return (
                         <div key={id}>
-                            <h3 className={classes.title}>Articulo {number}: {name}</h3>
+                            <h4 className={classes.title}>Articulo {number}: {name}</h4>
                             <div className={classes.content}>{parse(content)}</div>
                         </div>
                     )
