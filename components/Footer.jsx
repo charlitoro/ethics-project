@@ -41,58 +41,6 @@ export default function Footer( props ) {
                         <ListItem className={classes.inlineBlock}>
                             <Phone className={classes.icon}/> 316 546 73 46
                         </ListItem>
-                        <br/>
-                        <ListItem className={classes.inlineBlock}>
-                            <Tooltip
-                                id="instagram-twitter"
-                                title="Follow us on twitter"
-                                placement={"top"}
-                                classes={{ tooltip: classes.tooltip }}
-                            >
-                                <Button
-                                    href="https://twitter.com/CreativeTim?ref=creativetim"
-                                    target="_blank"
-                                    color="transparent"
-                                    className={classes.navLink}
-                                >
-                                    <Twitter className={classes.icon} />
-                                </Button>
-                            </Tooltip>
-                        </ListItem>
-                        <ListItem className={classes.inlineBlock}>
-                            <Tooltip
-                                id="instagram-facebook"
-                                title="Follow us on facebook"
-                                placement={"top"}
-                                classes={{ tooltip: classes.tooltip }}
-                            >
-                                <Button
-                                    color="transparent"
-                                    href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                                    target="_blank"
-                                    className={classes.navLink}
-                                >
-                                    <Facebook className={classes.icon} />
-                                </Button>
-                            </Tooltip>
-                        </ListItem>
-                        <ListItem className={classes.inlineBlock}>
-                            <Tooltip
-                                id="instagram-tooltip"
-                                title="Follow us on instagram"
-                                placement={"top"}
-                                classes={{ tooltip: classes.tooltip }}
-                            >
-                                <Button
-                                    color="transparent"
-                                    href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                                    target="_blank"
-                                    className={classes.navLink}
-                                >
-                                    <Instagram className={classes.icon} />
-                                </Button>
-                            </Tooltip>
-                        </ListItem>
                     </List>
                 </div>
                 <div className={classes.right}>
