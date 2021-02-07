@@ -1,0 +1,1 @@
+{"ast":null,"code":"var AUTH_SERVER = 'http://localhost:5000';\nvar CLIENT_ID = \"8c736a60-7cf4-11ea-8bbc-adcb39da8f47\";\nvar API_URL = \"https://app.scalars.co/rybk37gvz3/api\";\nexport { AUTH_SERVER, CLIENT_ID, API_URL };","map":null,"metadata":{},"sourceType":"module"}

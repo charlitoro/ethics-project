@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useQuery } from \"@apollo/react-hooks\";\nexport const executeQuery = (query, variables = {}) => {\n  return useQuery(query, {\n    variables,\n    notifyOnNetworkStatusChange: true\n  });\n};","map":null,"metadata":{},"sourceType":"module"}

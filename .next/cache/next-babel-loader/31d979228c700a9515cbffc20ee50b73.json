@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useQuery } from \"@apollo/react-hooks\";\nexport var executeQuery = function executeQuery(query) {\n  var variables = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};\n  return useQuery(query, {\n    variables: variables,\n    notifyOnNetworkStatusChange: true\n  });\n};","map":null,"metadata":{},"sourceType":"module"}
