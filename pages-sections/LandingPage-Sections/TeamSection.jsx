@@ -4,8 +4,6 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui/icons
-
 // core components
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
@@ -16,12 +14,9 @@ import CardFooter from "../../components/Card/CardFooter";
 
 import styles from "../../assets/jss/nextjs-material-kit/pages/landingPageSections/teamStyle";
 
-// @ts-ignore
-import team1 from "../../assets/img/faces/avatar.jpg";
-// @ts-ignore
-import team3 from "../../assets/img/faces/christian.jpg";
-// @ts-ignore
-import team2 from "../../assets/img/faces/kendall.jpg";
+import erika from "../../assets/img/faces/erika-profile.png";
+import kandel from "../../assets/img/faces/kandel-profile.png";
+import charli from "../../assets/img/faces/charli-profile.png";
 
 const useStyles = makeStyles(styles);
 
@@ -34,13 +29,13 @@ export default function TeamSection() {
   );
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Here is our team</h2>
+      <h2 className={classes.title}>Equipo de Trabajo</h2>
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={erika} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Erika Orbes
@@ -56,13 +51,7 @@ export default function TeamSection() {
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
+                  href="https://www.instagram.com/erikaorbes/"
                   color="transparent"
                   className={classes.margin5}
                 >
@@ -81,7 +70,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team2} alt="..." className={imageClasses} />
+                <img src={kandel} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Kandel Yandar
@@ -97,17 +86,18 @@ export default function TeamSection() {
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   justIcon
+                  href="https://www.instagram.com/kandel_yandar/"
                   color="transparent"
                   className={classes.margin5}
                 >
-                  <i className={classes.socials + " fab fa-twitter"} />
+                  <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
                 <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
+                    justIcon
+                    color="transparent"
+                    className={classes.margin5}
                 >
-                  <i className={classes.socials + " fab fa-linkedin"} />
+                  <i className={classes.socials + " fab fa-facebook"} />
                 </Button>
               </CardFooter>
             </Card>
@@ -115,7 +105,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team3} alt="..." className={imageClasses} />
+                <img src={charli} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Carlos Toro
@@ -131,6 +121,7 @@ export default function TeamSection() {
               <CardFooter className={classes.justifyCenter}>
                 <Button
                   justIcon
+                  href="https://twitter.com/charlitoro_"
                   color="transparent"
                   className={classes.margin5}
                 >
@@ -138,6 +129,7 @@ export default function TeamSection() {
                 </Button>
                 <Button
                   justIcon
+                  href="https://www.instagram.com/charlitoro_/"
                   color="transparent"
                   className={classes.margin5}
                 >
@@ -145,10 +137,11 @@ export default function TeamSection() {
                 </Button>
                 <Button
                   justIcon
+                  href="https://www.linkedin.com/in/charlitoro/"
                   color="transparent"
                   className={classes.margin5}
                 >
-                  <i className={classes.socials + " fab fa-facebook"} />
+                  <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
               </CardFooter>
             </Card>

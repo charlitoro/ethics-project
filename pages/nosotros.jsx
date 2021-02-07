@@ -18,8 +18,8 @@ import styles from "../assets/jss/nextjs-material-kit/pages/landingPage";
 
 // Sections for this page
 import TeamSection from "../pages-sections/LandingPage-Sections/TeamSection";
+import image from '../assets/img/about-landing.jpg'
 
-const image = 'https://pixabay.com/get/57e2dd434f51a414f6d1867dda3536781536dde35350734b_1920.jpg'
 const dashboardRoutes = [];
 const useStyles = makeStyles(styles);
 
@@ -45,7 +45,7 @@ export default ( props ) =>  {
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={6}>
                             <h1 className={classes.title}>Acerca de Nosotros</h1>
-                            <h4>
+                            <h4 className={classes.title}>
                                 Nuestro quipo de trabajo lo integran estudiantes de ultimo semestre del programa
                                 de Ingenieria de Sistemas de la Universidad de Nariño.
                             </h4>
