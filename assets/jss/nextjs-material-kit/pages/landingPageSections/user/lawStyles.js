@@ -1,7 +1,9 @@
 import { title } from "../../../../nextjs-material-kit";
 import customCheckboxRadioSwitch from "../../../customCheckboxRadioSwitch";
+import {green} from "@material-ui/core/colors";
 
-const lawStyles = {
+const lawStyles = (theme) => ({
+    ...customCheckboxRadioSwitch,
     section: {
         padding: "70px 0",
         textAlign: "center"
@@ -29,7 +31,19 @@ const lawStyles = {
         height: "20px",
         color: "inherit"
     },
-    ...customCheckboxRadioSwitch
-};
+    wrapper: {
+        margin: theme.spacing(1),
+        position: 'relative',
+        alignItems: 'center'
+    },
+    buttonProgress: {
+        color: green[500],
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -12,
+        marginLeft: -12,
+    }
+});
 
 export default lawStyles;

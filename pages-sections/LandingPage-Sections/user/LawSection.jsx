@@ -12,7 +12,7 @@ import {
     FormControl,
     FormControlLabel,
     RadioGroup,
-    Radio,
+    Radio, CircularProgress,
 } from "@material-ui/core";
 import CustomInput from "../../../components/CustomInput";
 import { Search } from "@material-ui/icons";
@@ -43,6 +43,7 @@ export default function LawSection() {
     const [searchQuery, setSearchQuery] = useState( searchTitleQuery );
     const [searchText, setSearchText] = useState( '' )
     const [searched, setSearched] = useState ( searchLawContent() )
+    const [loading, setLoading] = React.useState(false);
 
     const handleRadioChange = (event) => {
         const value = (event.target).value
@@ -57,6 +58,7 @@ export default function LawSection() {
 
     const handlerSearch = async () => {
         try {
+            setLoading( true )
             const response = await fetch( `${API_URL}`, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -112,6 +114,7 @@ export default function LawSection() {
                     setSearched(setData)
                 }
             }
+            setLoading( false )
         } catch ( error ){
             console.log( '=> Error: ', error.message )
         }
@@ -173,9 +176,12 @@ export default function LawSection() {
                                 fullWidth: true
                             }}
                         />
-                        <Button justIcon round color="rose" onClick={handlerSearch}>
-                            <Search className={classes.searchIcon}/>
-                        </Button>
+                        <div className={classes.wrapper}>
+                            <Button disabled={loading} justIcon round color="rose" onClick={handlerSearch}>
+                                <Search className={classes.searchIcon}/>
+                            </Button>
+                            {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+                        </div>
                     </GridItem>
                 </GridContainer>
                 <GridContainer className={classes.gridScroll} justify="center">

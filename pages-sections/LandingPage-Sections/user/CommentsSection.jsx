@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "../../../assets/jss/nextjs-material-kit/pages/landingPageSections/commentsStyles";
-import {TextField, List, ListItem, ListItemAvatar, Avatar, ListItemText, Typography} from '@material-ui/core';
+import {
+    TextField,
+    List,
+    ListItem,
+    ListItemAvatar,
+    Avatar,
+    ListItemText,
+    Typography,
+    CircularProgress
+} from '@material-ui/core';
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
 import {executeQuery} from "../../../plugins/graphqlQueryRequest";
@@ -29,6 +38,7 @@ export default function CommentsSection (){
     const classes = useStyles();
     const [comments, setComments] = useState( findComments() )
     const [commentText, setCommentText] = useState( '' )
+    const [loading, setLoading] = React.useState(false);
 
     const handlerCommentText = ( event ) => {
         setCommentText( event.target.value )
@@ -37,7 +47,8 @@ export default function CommentsSection (){
     const handlerPostComment = async () => {
         if( !isEmpty(commentText) ){
             try {
-                const response = await fetch( `${API_URL}`, {
+                setLoading( true )
+                await fetch( `${API_URL}`, {
                     method: 'POST',
                     body: JSON.stringify({
                         query: createCommentMutation,
@@ -49,7 +60,6 @@ export default function CommentsSection (){
                         'Authorization': `client_id ${CLIENT_ID}`
                     }
                 } ).then( (res) => res.json() )
-                console.log(response)
                 const { data } = await fetch( `${API_URL}`, {
                     method: 'POST',
                     body: JSON.stringify({ query: commentsQuery }),
@@ -63,6 +73,7 @@ export default function CommentsSection (){
                 setComments(  orderBy( data.comments, ( { createdAt } ) => {
                     return moment(createdAt); }, ['desc']
                 ) )
+                setLoading( false )
             } catch (error){
                 console.error( 'Error: ', error.message )
             }
@@ -82,9 +93,12 @@ export default function CommentsSection (){
                         rows={4}
                         variant="outlined"
                     />
-                    <Button color="rose" size="sm" onClick={handlerPostComment} >
-                        <AddComment className="fas fa-play" /> Comentar
-                    </Button>
+                    <div className={classes.wrapper}>
+                        <Button disabled={loading} color="rose" size="sm" onClick={handlerPostComment} >
+                            <AddComment className="fas fa-play" /> Comentar
+                        </Button>
+                        {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+                    </div>
                 </GridItem>
             </GridContainer>
             <div>
