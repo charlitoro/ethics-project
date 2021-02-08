@@ -1,13 +1,10 @@
 /*eslint-disable*/
 import React from "react";
-import Link from "next/link";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import {Group, Gavel, Star} from "@material-ui/icons";
@@ -24,11 +21,9 @@ export default function HeaderLinks() {
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
-                <Link href="/">
-                    <Button color="transparent" className={classes.navLink}>
-                        <Star className={classes.icons}/> Inicio
-                    </Button>
-                </Link>
+                <Button href="/home" color="transparent" className={classes.navLink}>
+                    <Star className={classes.icons}/> Home
+                </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Button href="/ley" color="transparent" className={classes.navLink}>
@@ -43,27 +38,3 @@ export default function HeaderLinks() {
         </List>
     );
 }
-
-
-{/*<CustomDropdown*/}
-{/*    noLiPadding*/}
-{/*    navDropdown*/}
-{/*    buttonText="Inicio"*/}
-{/*    buttonProps={{*/}
-{/*        className: classes.navLink,*/}
-{/*        color: "transparent"*/}
-{/*    }}*/}
-{/*    buttonIcon={Star}*/}
-{/*    dropdownList={[*/}
-{/*        <Link href="/">*/}
-{/*            <a className={classes.dropdownLink}>All components</a>*/}
-{/*        </Link>,*/}
-{/*        <a*/}
-{/*            href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"*/}
-{/*            target="_blank"*/}
-{/*            className={classes.dropdownLink}*/}
-{/*        >*/}
-{/*            Documentation*/}
-{/*        </a>*/}
-{/*    ]}*/}
-{/*/>*/}
