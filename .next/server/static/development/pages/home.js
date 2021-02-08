@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2236,30 +2236,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HeaderLinks; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/List */ "@material-ui/core/List");
-/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/ListItem */ "@material-ui/core/ListItem");
-/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "@material-ui/core/Tooltip");
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons */ "@material-ui/icons");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Button */ "./components/Button.jsx");
-/* harmony import */ var _assets_jss_nextjs_material_kit_components_headerLinksStyle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/jss/nextjs-material-kit/components/headerLinksStyle */ "./assets/jss/nextjs-material-kit/components/headerLinksStyle.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/List */ "@material-ui/core/List");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/ListItem */ "@material-ui/core/ListItem");
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons */ "@material-ui/icons");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Button */ "./components/Button.jsx");
+/* harmony import */ var _assets_jss_nextjs_material_kit_components_headerLinksStyle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/jss/nextjs-material-kit/components/headerLinksStyle */ "./assets/jss/nextjs-material-kit/components/headerLinksStyle.js");
 var _jsxFileName = "/home/charlie/MEGAsync/Ingenieria Sistemas/DECIMO SEMESTRE/Etica/app-ley842/components/Header/HeaderLinks.jsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 /*eslint-disable*/
-
  // @material-ui/core components
-
-
 
 
 
@@ -2269,51 +2260,70 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(_assets_jss_nextjs_material_kit_components_headerLinksStyle__WEBPACK_IMPORTED_MODULE_9__["default"]);
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(_assets_jss_nextjs_material_kit_components_headerLinksStyle__WEBPACK_IMPORTED_MODULE_6__["default"]);
 function HeaderLinks() {
   const classes = useStyles();
-  return __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  return __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: classes.list,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 22,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.listItem,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 23,
       columnNumber: 13
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 17
-    }
-  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/home",
     color: "transparent",
     className: classes.navLink,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 21
+      lineNumber: 24,
+      columnNumber: 17
     }
-  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_7__["Star"], {
+  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__["Star"], {
     className: classes.icons,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
-      columnNumber: 25
+      lineNumber: 25,
+      columnNumber: 21
     }
-  }), " Inicio"))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }), " Home")), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: classes.listItem,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 13
+    }
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/ley",
+    color: "transparent",
+    className: classes.navLink,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__["Gavel"], {
+    className: classes.icons,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 21
+    }
+  }), " Ley 842")), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.listItem,
     __self: this,
     __source: {
@@ -2321,8 +2331,8 @@ function HeaderLinks() {
       lineNumber: 33,
       columnNumber: 13
     }
-  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    href: "/ley",
+  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/nosotros",
     color: "transparent",
     className: classes.navLink,
     __self: this,
@@ -2331,7 +2341,7 @@ function HeaderLinks() {
       lineNumber: 34,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_7__["Gavel"], {
+  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__["Group"], {
     className: classes.icons,
     __self: this,
     __source: {
@@ -2339,99 +2349,7 @@ function HeaderLinks() {
       lineNumber: 35,
       columnNumber: 21
     }
-  }), " Ley 842")), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    className: classes.listItem,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 13
-    }
-  }, __jsx(_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    href: "/nosotros",
-    color: "transparent",
-    className: classes.navLink,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 17
-    }
-  }, __jsx(_material_ui_icons__WEBPACK_IMPORTED_MODULE_7__["Group"], {
-    className: classes.icons,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40,
-      columnNumber: 21
-    }
   }), " Nosotros")));
-}
-{
-  /*<CustomDropdown*/
-}
-{
-  /*    noLiPadding*/
-}
-{
-  /*    navDropdown*/
-}
-{
-  /*    buttonText="Inicio"*/
-}
-{
-  /*    buttonProps={{*/
-}
-{
-  /*        className: classes.navLink,*/
-}
-{
-  /*        color: "transparent"*/
-}
-{
-  /*    }}*/
-}
-{
-  /*    buttonIcon={Star}*/
-}
-{
-  /*    dropdownList={[*/
-}
-{
-  /*        <Link href="/">*/
-}
-{
-  /*            <a className={classes.dropdownLink}>All components</a>*/
-}
-{
-  /*        </Link>,*/
-}
-{
-  /*        <a*/
-}
-{
-  /*            href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"*/
-}
-{
-  /*            target="_blank"*/
-}
-{
-  /*            className={classes.dropdownLink}*/
-}
-{
-  /*        >*/
-}
-{
-  /*            Documentation*/
-}
-{
-  /*        </a>*/
-}
-{
-  /*    ]}*/
-}
-{
-  /*/>*/
 }
 
 /***/ }),
@@ -5355,39 +5273,32 @@ const Home = props => {
       lineNumber: 53,
       columnNumber: 29
     }
-  }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
     href: "/ley",
+    color: "danger",
+    size: "sm",
+    target: "_blank",
+    rel: "noopener noreferrer",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54,
       columnNumber: 29
     }
-  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    color: "danger",
-    size: "lg",
-    target: "_blank",
-    rel: "noopener noreferrer",
+  }, __jsx("i", {
+    className: "fas fa-play",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55,
       columnNumber: 33
     }
-  }, __jsx("i", {
-    className: "fas fa-play",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 37
-    }
-  }), " Ver M\xE1s")))))), __jsx("div", {
+  }), " Ver M\xE1s"))))), __jsx("div", {
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(classes.main, classes.mainRaised),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 61,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -5395,21 +5306,21 @@ const Home = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 62,
       columnNumber: 17
     }
   }, __jsx(_pages_sections_LandingPage_Sections_user_LandingPage__WEBPACK_IMPORTED_MODULE_14__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 63,
       columnNumber: 21
     }
   }))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 66,
       columnNumber: 13
     }
   }));
@@ -5534,7 +5445,7 @@ const newsQuery = apollo_boost__WEBPACK_IMPORTED_MODULE_0__["gql"]`
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/home.jsx ***!
   \******************************/
@@ -5631,17 +5542,6 @@ module.exports = require("@material-ui/core/Grid");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Hidden");
-
-/***/ }),
-
-/***/ "@material-ui/core/Icon":
-/*!*****************************************!*\
-  !*** external "@material-ui/core/Icon" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Icon");
 
 /***/ }),
 
