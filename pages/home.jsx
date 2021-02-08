@@ -51,7 +51,7 @@ const Home = ( props ) =>  {
                         <GridItem xs={12} sm={12} md={6}>
                             <h1 className={classes.title}>Etica Profecional de Ingeniería y Sus Profecines Afines</h1>
                             <br />
-                            <Button href="/ley" color="danger" size="sm" target="_blank" rel="noopener noreferrer" >
+                            <Button href="/ley" color="danger" size="sm" rel="noopener noreferrer" >
                                 <i className="fas fa-play" /> Ver Más
                             </Button>
                         </GridItem>

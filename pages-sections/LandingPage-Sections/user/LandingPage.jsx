@@ -1,30 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "../../../assets/jss/nextjs-material-kit/pages/landingPageSections/user/landingPageStyles";
 import GridItem from "../../../components/Grid/GridItem";
 import GridContainer from "../../../components/Grid/GridContainer";
 import ReactPlayer from 'react-player'
 import {Card, CardActionArea, CardMedia, CardContent, CardActions, Button, Typography} from "@material-ui/core";
-import {newsQuery, searchQuery} from "../../../utils/queries";
+import {newsQuery} from "../../../utils/queries";
 import {executeQuery} from "../../../plugins/graphqlQueryRequest";
-import {map, orderBy} from "lodash";
+import {map, orderBy, get} from "lodash";
 import moment from "moment";
 
 const useStyles = makeStyles(styles);
 
-const getNews = () => {
-    const { data, loading } = executeQuery( newsQuery )
-    if( !loading && data && data.posts ) {
-        return orderBy( data.posts, ( { createdAt } ) => {
-            return moment(createdAt); }, ['desc']
-        );
-    }
-}
-
 export default function LandingPage() {
     const classes = useStyles()
 
-    const [news, setNews] = useState( getNews() )
+    const { data, loading } = executeQuery( newsQuery )
 
     return (
         <div className={classes.section}>
@@ -56,30 +47,35 @@ export default function LandingPage() {
             <div className={classes.section}>
                 <h2 className={classes.title}>Noticias</h2>
                 <GridContainer justify="center">
-                    {
-                        map( news, ({ id, url, image, title, content } ) => {
-                            return <GridItem key={id} xs={4}>
-                                <Card className={classes.card}>
-                                    <CardActionArea>
-                                        <CardMedia
-                                            component="img"
-                                            alt={title}
-                                            height="140"
-                                            image={image}
-                                            title={title}
-                                        />
-                                        <CardContent>
-                                            <Typography align="left" gutterBottom variant="subtitle2" >{title}</Typography>
-                                            <Typography align="left" variant="body2" color="textSecondary" component="p">{content}</Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                    <CardActions>
-                                        <Button target="_blank" href={url} size="small" color="primary"> Leer más </Button>
-                                    </CardActions>
-                                </Card>
-                            </GridItem>
-                        })
-                    }
+                    {( () => {
+                        if( !loading && get( data, `posts` ) ) {
+                            const news = orderBy( data.posts, ( { createdAt } ) => {
+                                return moment(createdAt); }, ['desc']
+                            );
+                            return map( news, ({ id, url, image, title, content } ) => {
+                                return <GridItem key={id} xs={4}>
+                                    <Card className={classes.card}>
+                                        <CardActionArea>
+                                            <CardMedia
+                                                component="img"
+                                                alt={title}
+                                                height="140"
+                                                image={image}
+                                                title={title}
+                                            />
+                                            <CardContent>
+                                                <Typography align="left" gutterBottom variant="subtitle2" >{title}</Typography>
+                                                <Typography align="left" variant="body2" color="textSecondary" component="p">{content}</Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <CardActions>
+                                            <Button target="_blank" href={url} size="small" color="primary"> Leer más </Button>
+                                        </CardActions>
+                                    </Card>
+                                </GridItem>
+                            })
+                        }
+                    } ) ()}
                 </GridContainer>
             </div>
         </div>

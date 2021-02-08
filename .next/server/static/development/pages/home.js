@@ -4901,41 +4901,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(_assets_jss_nextjs_material_kit_pages_landingPageSections_user_landingPageStyles__WEBPACK_IMPORTED_MODULE_2__["default"]);
-
-const getNews = () => {
+function LandingPage() {
+  const classes = useStyles();
   const {
     data,
     loading
   } = Object(_plugins_graphqlQueryRequest__WEBPACK_IMPORTED_MODULE_8__["executeQuery"])(_utils_queries__WEBPACK_IMPORTED_MODULE_7__["newsQuery"]);
-
-  if (!loading && data && data.posts) {
-    return Object(lodash__WEBPACK_IMPORTED_MODULE_9__["orderBy"])(data.posts, ({
-      createdAt
-    }) => {
-      return moment__WEBPACK_IMPORTED_MODULE_10___default()(createdAt);
-    }, ['desc']);
-  }
-};
-
-function LandingPage() {
-  const classes = useStyles();
-  const {
-    0: news,
-    1: setNews
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(getNews());
   return __jsx("div", {
     className: classes.section,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 22,
       columnNumber: 13
     }
   }, __jsx(_components_Grid_GridContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -4943,7 +4927,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 23,
       columnNumber: 17
     }
   }, __jsx(_components_Grid_GridItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -4953,7 +4937,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 24,
       columnNumber: 21
     }
   }, __jsx("h1", {
@@ -4961,7 +4945,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 25,
       columnNumber: 25
     }
   }, "Ley 842 de 2003"), __jsx("h3", {
@@ -4969,21 +4953,21 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 26,
       columnNumber: 25
     }
   }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")))), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 39,
       columnNumber: 13
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 40,
       columnNumber: 13
     }
   }, __jsx(_components_Grid_GridContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -4991,7 +4975,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 41,
       columnNumber: 17
     }
   }, __jsx(_components_Grid_GridItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5001,7 +4985,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 42,
       columnNumber: 21
     }
   }, __jsx(react_player__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -5009,7 +4993,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 43,
       columnNumber: 25
     }
   })))), __jsx("div", {
@@ -5017,7 +5001,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, __jsx("h2", {
@@ -5025,7 +5009,7 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 48,
       columnNumber: 17
     }
   }, "Noticias"), __jsx(_components_Grid_GridContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -5033,100 +5017,109 @@ function LandingPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 49,
       columnNumber: 17
     }
-  }, Object(lodash__WEBPACK_IMPORTED_MODULE_9__["map"])(news, ({
-    id,
-    url,
-    image,
-    title,
-    content
-  }) => {
-    return __jsx(_components_Grid_GridItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: id,
-      xs: 4,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61,
-        columnNumber: 36
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Card"], {
-      className: classes.card,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62,
-        columnNumber: 33
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardActionArea"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63,
-        columnNumber: 37
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardMedia"], {
-      component: "img",
-      alt: title,
-      height: "140",
-      image: image,
-      title: title,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 41
-      }
-    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardContent"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71,
-        columnNumber: 41
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
-      align: "left",
-      gutterBottom: true,
-      variant: "subtitle2",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72,
-        columnNumber: 45
-      }
-    }, title), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
-      align: "left",
-      variant: "body2",
-      color: "textSecondary",
-      component: "p",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73,
-        columnNumber: 45
-      }
-    }, content))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardActions"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76,
-        columnNumber: 37
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Button"], {
-      target: "_blank",
-      href: url,
-      size: "small",
-      color: "primary",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77,
-        columnNumber: 41
-      }
-    }, " Leer m\xE1s "))));
-  }))));
+  }, (() => {
+    if (!loading && Object(lodash__WEBPACK_IMPORTED_MODULE_9__["get"])(data, `posts`)) {
+      const news = Object(lodash__WEBPACK_IMPORTED_MODULE_9__["orderBy"])(data.posts, ({
+        createdAt
+      }) => {
+        return moment__WEBPACK_IMPORTED_MODULE_10___default()(createdAt);
+      }, ['desc']);
+      return Object(lodash__WEBPACK_IMPORTED_MODULE_9__["map"])(news, ({
+        id,
+        url,
+        image,
+        title,
+        content
+      }) => {
+        return __jsx(_components_Grid_GridItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          key: id,
+          xs: 4,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 56,
+            columnNumber: 40
+          }
+        }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Card"], {
+          className: classes.card,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 37
+          }
+        }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardActionArea"], {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 58,
+            columnNumber: 41
+          }
+        }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardMedia"], {
+          component: "img",
+          alt: title,
+          height: "140",
+          image: image,
+          title: title,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59,
+            columnNumber: 45
+          }
+        }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardContent"], {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 45
+          }
+        }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
+          align: "left",
+          gutterBottom: true,
+          variant: "subtitle2",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 49
+          }
+        }, title), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
+          align: "left",
+          variant: "body2",
+          color: "textSecondary",
+          component: "p",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68,
+            columnNumber: 49
+          }
+        }, content))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["CardActions"], {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 41
+          }
+        }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+          target: "_blank",
+          href: url,
+          size: "small",
+          color: "primary",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 45
+          }
+        }, " Leer m\xE1s "))));
+      });
+    }
+  })())));
 }
 
 /***/ }),
@@ -5277,7 +5270,6 @@ const Home = props => {
     href: "/ley",
     color: "danger",
     size: "sm",
-    target: "_blank",
     rel: "noopener noreferrer",
     __self: undefined,
     __source: {
