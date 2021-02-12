@@ -78,7 +78,7 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>Ley 843 Ingenieria</title>
+          <title>Ley 842 Ingenieria</title>
         </Head>
         <Component {...pageProps} />
       </React.Fragment>

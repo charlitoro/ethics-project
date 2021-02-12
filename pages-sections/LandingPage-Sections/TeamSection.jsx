@@ -44,8 +44,8 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
-                  analista en el equipo de desarrollo.
+                Estudiante de 10 semestre de Ingeniería de Sistemas de la Universidad de Nariño
+                 y analista en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -79,8 +79,8 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
-                  arquitecta en el equipo de desarrollo.
+                Estudiante de 10 semestre de Ingeniería de Sistemas de la Universidad de Nariño 
+                y arquitecta en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -114,8 +114,8 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  Estudiante de 10 semestre de Ingenieria de Sistemas de la Universidad de Nariño y
-                  desarrolador full stack en el equipo de desarrollo.
+                Estudiante de 10 semestre de Ingeniería de Sistemas de la Universidad de Nariño 
+                y desarrollador full stack en el equipo de desarrollo.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>

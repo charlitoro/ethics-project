@@ -46,8 +46,8 @@ export default ( props ) =>  {
                         <GridItem xs={12} sm={12} md={6}>
                             <h1 className={classes.title}>Acerca de Nosotros</h1>
                             <h4 className={classes.title}>
-                                Nuestro quipo de trabajo lo integran estudiantes de ultimo semestre del programa
-                                de Ingenieria de Sistemas de la Universidad de Nariño.
+                            Nuestro equipo de trabajo lo integran estudiantes de último semestre 
+                            del programa de Ingeniería de Sistemas de la Universidad de Nariño.
                             </h4>
                         </GridItem>
                     </GridContainer>

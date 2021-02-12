@@ -49,7 +49,7 @@ const Home = ( props ) =>  {
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={6}>
-                            <h1 className={classes.title}>Etica Profecional de Ingeniería y Sus Profecines Afines</h1>
+                            <h1 className={classes.title}>Ética Profesional de Ingeniería y sus Profesiones afines</h1>
                             <br />
                             <Button href="/ley" color="danger" size="sm" rel="noopener noreferrer" >
                                 <i className="fas fa-play" /> Ver Más

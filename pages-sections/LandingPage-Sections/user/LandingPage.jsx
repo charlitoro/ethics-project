@@ -24,14 +24,9 @@ export default function LandingPage() {
                     <GridItem xs={12} sm={12} md={8}>
                         <h1 className={classes.title}>Ley 842 de 2003</h1>
                         <h3 className={classes.description}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                            irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
+                        Por la cual se modifica la reglamentación del ejercicio de la ingeniería,
+                        4 de sus profesiones afines y de sus profesiones auxiliares, se adopta 
+                        el Código de Ética Profesional y se dictan otras disposiciones
                         </h3>
                     </GridItem>
                 </GridContainer>

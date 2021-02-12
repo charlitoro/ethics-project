@@ -189,7 +189,7 @@ export default function LawSection() {
                         if( isEmpty(searched) )
                             return (
                                 <GridItem xs={12} sm={12} md={12} lg={8}>
-                                    <h3 className={classes.title}>"No se encontraron concidencias"</h3>
+                                    <h3 className={classes.title}>"No se encontraron coincidencias"</h3>
                                 </GridItem>
                             )
                         else
