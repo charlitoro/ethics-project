@@ -750,7 +750,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
         lineNumber: 81,
         columnNumber: 11
       }
-    }, "Ley 843 Ingenieria")), __jsx(Component, _extends({}, pageProps, {
+    }, "Ley 842 Ingenieria")), __jsx(Component, _extends({}, pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,

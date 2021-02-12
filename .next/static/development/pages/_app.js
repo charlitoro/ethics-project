@@ -21857,7 +21857,7 @@ var MyApp = /*#__PURE__*/function (_App) {
           lineNumber: 81,
           columnNumber: 11
         }
-      }, "Ley 843 Ingenieria")), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, pageProps, {
+      }, "Ley 842 Ingenieria")), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, pageProps, {
         __self: this,
         __source: {
           fileName: _jsxFileName,

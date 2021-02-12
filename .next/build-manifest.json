@@ -24,11 +24,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/home": [
+    "/ley": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/ley": [
+    "/nosotros": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
