@@ -22,10 +22,10 @@ export default function LandingPage() {
             <div>
                 <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={8}>
-                        <h1 className={classes.title}>Ley 842 de 2003</h1>
+                        <h2 className={classes.title}>Ley 842 de 2003</h2>
                         <h3 className={classes.description}>
                         Por la cual se modifica la reglamentación del ejercicio de la ingeniería,
-                        4 de sus profesiones afines y de sus profesiones auxiliares, se adopta 
+                        4 de sus profesiones afines y de sus profesiones auxiliares, se adopta
                         el Código de Ética Profesional y se dictan otras disposiciones
                         </h3>
                     </GridItem>
@@ -35,7 +35,14 @@ export default function LandingPage() {
             <div>
                 <GridContainer justify="center">
                     <GridItem xs={12} sm={12} md={7}>
-                        <ReactPlayer url='https://www.youtube.com/watch?v=Pkp-quY98TI' />
+                        <div className={classes.playerWrapper}>
+                            <ReactPlayer
+                                url='https://www.youtube.com/watch?v=Pkp-quY98TI'
+                                className={classes.reactPlayer}
+                                width="100%"
+                                height="100%"
+                            />
+                        </div>
                     </GridItem>
                 </GridContainer>
             </div>
@@ -48,7 +55,7 @@ export default function LandingPage() {
                                 return moment(createdAt); }, ['desc']
                             );
                             return map( news, ({ id, url, image, title, content } ) => {
-                                return <GridItem key={id} xs={4}>
+                                return <GridItem key={id} xs={12} sm={6} md={4} lg={4}>
                                     <Card className={classes.card}>
                                         <CardActionArea>
                                             <CardMedia

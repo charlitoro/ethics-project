@@ -28,7 +28,7 @@ export default function Title( { number, name, chapters } ){
 
     return (
         <div>
-            <h2 className={classes.title}>Titulo {number}: {name}</h2>
+            <h3 className={classes.title}>Titulo {number}: {name}</h3>
             {
                 map( chapters, ( { id, number, image, name, articles } ) => {
                     return <Chapter
