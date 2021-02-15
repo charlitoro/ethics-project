@@ -47,10 +47,10 @@ const Ley = ( props ) =>  {
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={6}>
                             <h1 className={classes.title}>Ley 842 de 2003</h1>
-                            <h4>
-                            Sección de búsqueda de títulos, capítulos o artículos de la ley 842 de 2003, 
-                            por la cual se modifica la reglamentación del ejercicio de la ingeniería de sus 
-                            profesiones afines y de sus profesiones auxiliares, se adopta el Código Ética Profesional 
+                            <h4 className={classes.title}>
+                            Sección de búsqueda de títulos, capítulos o artículos de la ley 842 de 2003,
+                            por la cual se modifica la reglamentación del ejercicio de la ingeniería de sus
+                            profesiones afines y de sus profesiones auxiliares, se adopta el Código Ética Profesional
                             y se dictan otras disposiciones.
                             </h4>
                         </GridItem>
